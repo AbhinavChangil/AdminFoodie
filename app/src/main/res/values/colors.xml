@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="dark_green_logo">#18902f</color>
     <color name="light_green_logo">#81ea96</color>
+    <color name="extra_dark_green">#065515</color>
+    <color name="extra_light_green">#C0ECC9</color>
 </resources>

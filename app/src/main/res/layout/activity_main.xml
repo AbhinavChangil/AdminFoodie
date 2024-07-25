@@ -5,15 +5,374 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/white">
+
+
+    <ImageView
+        android:id="@+id/img_logo_main"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:elevation="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo1" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tv_foodie"
+        android:layout_width="199dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="17dp"
+        android:fontFamily="@font/akaya_telivigala"
+        android:text="Foodie"
+        android:textAlignment="center"
+        android:textColor="@color/dark_green_logo"
+        android:textSize="43sp"
+        android:elevation="9dp"
+        android:shadowColor="@color/black"
+        android:textStyle="bold|italic"
+        app:layout_constraintHorizontal_bias="0.349"
+        app:layout_constraintLeft_toRightOf="@id/img_logo_main"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_dashboard"
+        android:layout_width="match_parent"
+        android:layout_height="138dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_foodie"
+        android:layout_marginTop="45dp"
+        app:cardCornerRadius="12dp"
+        android:elevation="12dp"
+        android:background="@color/white">
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/pendingOrder_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/problem_icon"
+                android:layout_marginLeft="37dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/tv_pendingOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:fontFamily="@font/acme"
+                android:text="Pending\nOrder"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintLeft_toLeftOf="@id/pendingOrder_icon"
+                app:layout_constraintRight_toRightOf="@id/pendingOrder_icon"
+                app:layout_constraintTop_toBottomOf="@id/pendingOrder_icon" />
+            <ImageView
+                android:id="@+id/completedOrder_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/completed_icon"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintLeft_toRightOf="@id/pendingOrder_icon"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/tv_completedOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:fontFamily="@font/acme"
+                android:text="Completed \nOrder"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/completedOrder_icon"
+                app:layout_constraintStart_toStartOf="@+id/completedOrder_icon"
+                app:layout_constraintTop_toBottomOf="@+id/completedOrder_icon" />
+
+            <ImageView
+                android:id="@+id/earning_icon"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/earning_icon_gif"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="11dp"
+                app:layout_constraintLeft_toRightOf="@id/completedOrder_icon"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/tv_earning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/acme"
+                android:text="Earning"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/earning_icon"
+                app:layout_constraintStart_toStartOf="@+id/earning_icon"
+                app:layout_constraintTop_toBottomOf="@+id/earning_icon" />
+
+            <TextView
+                android:id="@+id/tv_pendingOrder_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30"
+                android:textColor="@color/extra_dark_green"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="11dp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_pendingOrder"
+                app:layout_constraintStart_toStartOf="@+id/tv_pendingOrder"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_completedOrder_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="78"
+                android:textStyle="bold"
+                android:textSize="19sp"
+                android:layout_marginBottom="11dp"
+                android:textColor="@color/extra_dark_green"
+                app:layout_constraintEnd_toEndOf="@+id/tv_completedOrder"
+                app:layout_constraintStart_toStartOf="@+id/tv_completedOrder"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_earning_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rs 28,0978"
+                android:layout_marginBottom="11dp"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/extra_dark_green"
+                app:layout_constraintEnd_toEndOf="@+id/tv_earning"
+                app:layout_constraintStart_toStartOf="@+id/tv_earning"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_addItem"
+        android:layout_width="150dp"
+        android:layout_height="90dp"
+        app:layout_constraintTop_toBottomOf="@id/card_view_dashboard"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:cardCornerRadius="12dp"
+        android:elevation="12dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="30dp"
+        app:cardBackgroundColor="@color/extra_light_green">
+
+        <ImageView
+            android:id="@+id/icon_addItem"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/pluse_round"
+            android:layout_marginTop="11dp"
+            android:layout_gravity="center_horizontal"
+            app:tint="@color/black" />
+        <TextView
+            android:id="@+id/tv_addItem"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Add Item"
+            android:textStyle="bold"
+            android:layout_marginTop="54dp"
+            android:gravity="center"
+            android:textSize="19sp"
+            android:fontFamily="@font/acme"
+            android:textColor="@color/extra_dark_green"/>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_allItemMenu"
+        android:layout_width="150dp"
+        android:layout_height="90dp"
+        app:layout_constraintTop_toBottomOf="@id/card_view_dashboard"
+        app:layout_constraintRight_toRightOf="parent"
+        app:cardCornerRadius="12dp"
+        android:elevation="12dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="30dp"
+        app:cardBackgroundColor="@color/extra_light_green">
+
+        <ImageView
+            android:id="@+id/icon_AllItemMenu"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/eye"
+            android:layout_marginTop="12dp"
+            android:layout_gravity="center_horizontal"
+            app:tint="@color/black" />
+        <TextView
+            android:id="@+id/tv_allItemMenu"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="All Item Menu"
+            android:layout_marginTop="54dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="19sp"
+            android:fontFamily="@font/acme"
+            android:textColor="@color/extra_dark_green"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_profile"
+        android:layout_width="150dp"
+        android:layout_height="90dp"
+        app:layout_constraintTop_toBottomOf="@id/card_view_addItem"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:cardCornerRadius="12dp"
+        android:elevation="12dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginLeft="30dp"
+        app:cardBackgroundColor="@color/extra_light_green">
+
+        <ImageView
+            android:id="@+id/icon_profile"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/user"
+            android:layout_marginTop="11dp"
+            android:layout_gravity="center_horizontal"
+            app:tint="@color/black" />
+        <TextView
+            android:id="@+id/tv_profile"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Profile"
+            android:layout_marginTop="54dp"
+            android:gravity="center"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/acme"
+            android:textColor="@color/extra_dark_green"/>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_createMenu"
+        android:layout_width="150dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="30dp"
+        android:elevation="12dp"
+        app:cardBackgroundColor="@color/extra_light_green"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_view_allItemMenu">
+
+        <ImageView
+            android:id="@+id/icon_createMenu"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="11dp"
+            app:srcCompat="@drawable/user_plus"
+            app:tint="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_createMenu"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="54dp"
+            android:fontFamily="@font/acme"
+            android:text="Create Menu"
+            android:textColor="@color/extra_dark_green"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_logOut"
+        android:layout_width="150dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="30dp"
+        android:elevation="12dp"
+        app:cardBackgroundColor="@color/extra_light_green"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_view_createMenu">
+
+        <ImageView
+            android:id="@+id/icon_logOut"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            app:srcCompat="@drawable/log_out" />
+
+        <TextView
+            android:id="@+id/tv_logOut"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="54dp"
+            android:fontFamily="@font/acme"
+            android:text="Log Out"
+            android:textColor="#FF3B3B"
+            android:textStyle="bold"
+            android:textSize="19sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_orderDispatch"
+        android:layout_width="150dp"
+        android:layout_height="90dp"
+        app:layout_constraintTop_toBottomOf="@id/card_view_profile"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:cardCornerRadius="12dp"
+        android:elevation="12dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginLeft="30dp"
+        app:cardBackgroundColor="@color/extra_light_green">
+
+        <ImageView
+            android:id="@+id/icon_orderDispatch"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            app:srcCompat="@drawable/shopping_bag"
+            android:layout_marginTop="11dp"
+            android:layout_gravity="center_horizontal" />
+        <TextView
+            android:id="@+id/tv_orderDispatch"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Order Dispatch"
+            android:layout_marginTop="54dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="19sp"
+            android:fontFamily="@font/acme"
+            android:textColor="#DDA90C" />
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
