@@ -90,7 +90,7 @@ class SigninActivity : AppCompatActivity() {
                 saveUserData()
 
                 //if account is created then move to main activity
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
                 finish()
             }
