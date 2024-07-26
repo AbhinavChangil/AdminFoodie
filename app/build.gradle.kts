@@ -52,4 +52,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    //dependency for google sigin
+    implementation("com.google.android.gms:play-services-auth:21.2.0")
 }

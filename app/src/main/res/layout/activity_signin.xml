@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/logo1"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="30dp"/>
 
     <TextView
         android:id="@+id/tv_logo"
@@ -208,64 +208,27 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_signin2" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_google2"
-        android:layout_width="160dp"
-        android:layout_height="45dp"
-        android:drawableLeft="@drawable/google"
-        android:text="Google"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/black"
-        android:textAllCaps="false"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_signin3"
-        app:layout_constraintRight_toLeftOf="@id/btn_fb2"
-        android:layout_marginTop="20dp"
-        android:paddingLeft="10dp"
-        app:layout_optimizationLevel="chains"
-        android:textSize="18sp"
-        android:background="@drawable/whitebutton"/>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_fb2"
-        android:layout_width="160dp"
-        android:layout_height="45dp"
-        android:layout_marginLeft="40dp"
-        android:paddingLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/white"
-        android:drawableLeft="@drawable/facebook"
-        android:text="Facebook"
-        android:textColor="@color/black"
-        android:textAllCaps="false"
-        android:textSize="18sp"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintLeft_toRightOf="@id/btn_google2"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_signin3"
-        app:layout_optimizationLevel="chains"
-        android:background="@drawable/whitebutton"/>
-
-    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_signin"
         android:layout_width="220dp"
         android:layout_height="55dp"
-        android:layout_marginTop="20dp"
         android:background="@drawable/whitebutton"
         android:backgroundTint="#1C712D"
-        android:fontFamily="@font/abhaya_libre"
-        android:text="Create Account"
         android:elevation="30dp"
+        android:fontFamily="@font/abhaya_libre"
         android:shadowColor="#F0F6F0"
+        android:text="Create Account"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_signin3"
+        app:layout_constraintRight_toRightOf="@+id/tv_signin3"
+        app:layout_constraintTop_toBottomOf="@+id/tv_signin3"
+        android:layout_marginTop="30dp"
         android:textSize="25sp"
         android:textStyle="bold"
         app:cornerRadius="10dp"
-        app:layout_constraintLeft_toRightOf="@id/btn_google2"
-        app:layout_constraintRight_toLeftOf="@id/btn_fb2"
-        app:layout_constraintTop_toBottomOf="@id/btn_google2" />
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="768dp" />
 
     <TextView
         android:id="@+id/tv_signin4"
