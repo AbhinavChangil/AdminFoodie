@@ -62,7 +62,7 @@
 
                 <TextView
                     android:id="@+id/tv_addItem_name"
-                    android:layout_width="100dp"
+                    android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:text="Item Name"
                     android:fontFamily="@font/abhaya_libre"
@@ -100,7 +100,7 @@
 
                 <TextView
                     android:id="@+id/tv_addItem_price"
-                    android:layout_width="100dp"
+                    android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:text="Item Price"
                     android:fontFamily="@font/abhaya_libre"

@@ -6,4 +6,6 @@
     <color name="light_green_logo">#81ea96</color>
     <color name="extra_dark_green">#065515</color>
     <color name="extra_light_green">#C0ECC9</color>
+    <color name="red1">#FFFF3B3B</color>
+    <color name="link_blue">#1B14ED</color>
 </resources>

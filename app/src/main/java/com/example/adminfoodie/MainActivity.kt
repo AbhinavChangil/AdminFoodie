@@ -4,8 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.adminfoodie.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -24,6 +22,16 @@ class MainActivity : AppCompatActivity() {
 
         binding.cardViewAllItemMenu.setOnClickListener {
             val intent = Intent(this, AllItemActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.cardViewOrderDispatch.setOnClickListener {
+            val intent = Intent(this, OutForDeliveryActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.cardViewProfile.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
         }
 

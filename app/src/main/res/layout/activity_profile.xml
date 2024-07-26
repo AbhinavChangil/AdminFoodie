@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity"
+    android:paddingLeft="15dp"
+    android:background="@color/white">
+
+    <ImageButton
+        android:id="@+id/btn_back_profile"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
+        android:src="@drawable/arrow_left"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="10dp"
+        android:background="@android:color/transparent" />
+
+    <TextView
+        android:id="@+id/tv_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Admin Profile"
+        android:fontFamily="@font/akaya_telivigala"
+        android:textSize="30sp"
+        android:textColor="@color/dark_green_logo"
+        android:textStyle="bold"
+        android:layout_marginTop="31dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/edit_profile_link"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_marginTop="20dp"
+        android:text="Edit Profile"
+        android:drawablePadding="8dp"
+        android:paddingLeft="15dp"
+        android:gravity="center"
+        android:clickable="true"
+        android:textColor="@color/extra_dark_green"
+        android:textSize="16sp"
+        android:fontFamily="@font/acme"
+        android:drawableLeft="@drawable/edit"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout_profile_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_profile" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout_profile_name"
+        android:layout_width="370dp"
+        android:layout_height="64dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/edit_profile_link"
+        android:layout_marginTop="16dp"
+        android:elevation="4dp"
+        android:background="@drawable/edittextshape"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Name"
+            android:layout_weight="3"
+            android:gravity="center_vertical"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingStart="10dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/abhaya_libre"/>
+        <EditText
+            android:id="@+id/edt_profile_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:paddingLeft="15dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:inputType="text"
+            android:text="Vipin Goyat"
+            android:hint="Enter Name"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout_profile_address"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/linearLayout_profile_name"
+        app:layout_constraintRight_toRightOf="@+id/linearLayout_profile_name"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout_profile_name"
+        android:layout_marginTop="16dp"
+        android:elevation="4dp"
+        android:background="@drawable/edittextshape"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Address"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_weight="3"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:paddingStart="10dp"
+            android:fontFamily="@font/abhaya_libre"/>
+        <EditText
+            android:id="@+id/edt_profile_address"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:paddingLeft="15dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:inputType="textMultiLine"
+            android:text="Model Town, Hansi"
+            android:hint="Enter Address"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout_profile_email"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/linearLayout_profile_address"
+        app:layout_constraintRight_toRightOf="@+id/linearLayout_profile_address"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout_profile_address"
+        android:layout_marginTop="16dp"
+        android:elevation="4dp"
+        android:background="@drawable/edittextshape"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Email"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_weight="3"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:paddingStart="10dp"
+            android:fontFamily="@font/abhaya_libre"/>
+        <EditText
+            android:id="@+id/edt_profile_email"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:paddingLeft="15dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:inputType="textEmailAddress"
+            android:text="avipinagoyat@gmail.com"
+            android:hint="Enter Email"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout_profile_phone"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/linearLayout_profile_email"
+        app:layout_constraintRight_toRightOf="@+id/linearLayout_profile_email"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout_profile_email"
+        android:layout_marginTop="16dp"
+        android:elevation="4dp"
+        android:background="@drawable/edittextshape"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Phone"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_weight="3"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:paddingStart="10dp"
+            android:fontFamily="@font/abhaya_libre"/>
+        <EditText
+            android:id="@+id/edt_profile_phone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:paddingLeft="15dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:inputType="phone"
+            android:text="8284950385"
+            android:hint="Enter Phone Number"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout_profile_password"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/linearLayout_profile_phone"
+        app:layout_constraintRight_toRightOf="@+id/linearLayout_profile_phone"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout_profile_phone"
+        android:layout_marginTop="16dp"
+        android:elevation="4dp"
+        android:background="@drawable/edittextshape"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:fontFamily="@font/abhaya_libre"
+            android:gravity="center_vertical"
+            android:paddingStart="10dp"
+            android:text="Password"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/edt_profile_password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:paddingLeft="15dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:inputType="textPassword"
+            android:text="Password@123"
+            android:hint="Enter Password"/>
+    </LinearLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_profile_saveInfo"
+        android:layout_width="300dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="38dp"
+        android:elevation="5dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/greenbuttongradient"
+        android:text="Save Information"
+        android:textColor="@color/white"
+        android:fontFamily="@font/abhaya_libre"
+        android:textAllCaps="false"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
