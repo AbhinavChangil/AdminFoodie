@@ -194,7 +194,7 @@
                     android:textColorHint="#FF494646"
                     android:textAlignment="inherit"
                     android:fontFamily="@font/abhaya_libre"
-                    android:hint="I Love this sweet dish..."
+                    android:hint="Add Description here..."
                     android:inputType="textMultiLine"/>
             </LinearLayout>
 
@@ -232,7 +232,7 @@
                     android:textColor="@color/black"
                     android:textColorHint="#FF494646"
                     android:fontFamily="@font/abhaya_libre"
-                    android:hint="Sugar\nGhee\nBesan\nColour"
+                    android:hint="Add Ingredients here..."
                     android:inputType="textMultiLine"/>
             </LinearLayout>
 
