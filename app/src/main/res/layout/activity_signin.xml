@@ -67,7 +67,7 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="15dp"
-        android:layout_marginLeft="17dp"
+        android:layout_marginLeft="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_signin"/>
 
@@ -80,9 +80,10 @@
         app:layout_constraintEnd_toEndOf="@+id/edt_name"
         android:layout_marginTop="5dp"
         app:boxStrokeWidth="0dp"
-        android:elevation="15dp"
+        android:elevation="20dp"
         app:boxStrokeWidthFocused="0dp"
         app:endIconDrawable="@drawable/arrow_down"
+        app:startIconDrawable="@drawable/icon_location"
         app:endIconMode="dropdown_menu"
         app:endIconTint="@color/black">
     <AutoCompleteTextView
@@ -94,8 +95,7 @@
         android:text="Choose Location"
         android:background="@drawable/edittextshape"
         android:fontFamily="@font/amethysta"
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp"/>
+        android:paddingRight="10dp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <EditText
@@ -108,7 +108,7 @@
         android:elevation="20dp"
         android:fontFamily="@font/abhaya_libre"
         android:hint="Name Of Owner"
-        android:drawablePadding="10dp"
+        android:drawablePadding="11dp"
         android:inputType="textPersonName"
         android:paddingLeft="10dp"
         android:shadowColor="#6E6C6C"
@@ -128,7 +128,7 @@
         android:elevation="20dp"
         android:fontFamily="@font/abhaya_libre"
         android:hint="Name Of Restaurant"
-        android:drawablePadding="10dp"
+        android:drawablePadding="12dp"
         android:inputType="textPersonName"
         android:paddingLeft="10dp"
         android:shadowColor="#6E6C6C"
@@ -171,7 +171,7 @@
         android:elevation="20dp"
         android:fontFamily="@font/abhaya_libre"
         android:outlineAmbientShadowColor="@color/black"
-        android:paddingLeft="10dp"
+        android:paddingLeft="14dp"
         android:textColorHint="#FF6E6C6C"
         android:shadowColor="#6E6C6C"
         android:textSize="23sp"

@@ -35,5 +35,19 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.cardViewCreateNewUser.setOnClickListener {
+            val intent = Intent(this, CreateNewUserActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.cardViewLogOut.setOnClickListener {
+            finish()
+        }
+
+        binding.tvPendingOrder.setOnClickListener {
+            val intent = Intent(this, PendingOrdersActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }

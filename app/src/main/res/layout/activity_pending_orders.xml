@@ -3,13 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OutForDeliveryActivity"
-    android:background="@color/white">
+    tools:context=".PendingOrdersActivity">
+
+
 
     <ImageButton
-        android:id="@+id/btn_back_outForDelivery"
+        android:id="@+id/btn_back_pendingOrders"
         android:layout_width="39dp"
         android:layout_height="39dp"
         android:src="@drawable/arrow_left"
@@ -20,28 +22,29 @@
         android:background="@android:color/transparent" />
 
     <TextView
-        android:id="@+id/tv_outForDelivery"
+        android:id="@+id/tv_pendingOrders"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Out For Delivery"
+        android:text="Pending Order"
         android:fontFamily="@font/akaya_telivigala"
         android:textSize="30sp"
         android:textColor="@color/dark_green_logo"
         android:textStyle="bold"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="31dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvOutForDelivery"
+        android:id="@+id/rvPendingOrders"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        tools:listitem="@layout/pending_orders_item"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_outForDelivery"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:listitem="@layout/delivery_item"
-        android:layout_marginTop="10dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/tv_pendingOrders" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

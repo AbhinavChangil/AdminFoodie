@@ -11,7 +11,7 @@ class DeliveryAdapter(private val customerName : ArrayList<String>, private val 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DeliveryViewHolder {
 
-        val binding = DeliveryItemBinding.inflate(LayoutInflater.from(parent.context))
+        val binding = DeliveryItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return DeliveryViewHolder(binding)
     }
 
