@@ -1,14 +1,23 @@
 package com.example.adminfoodie.adapter
 
+import android.content.Context
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.Recycler
+import com.bumptech.glide.Glide
 import com.example.adminfoodie.databinding.AllitemItemBinding
+import com.example.adminfoodie.model.AllMenu
+import com.google.firebase.database.DatabaseReference
 
-class AllItemAdapter(private val menuItemName : ArrayList<String>, private val menuItemPrice : ArrayList<String>, private val menuItemImage : ArrayList<Int>) : RecyclerView.Adapter<AllItemAdapter.AllItemViewHolder>(){
+//replace varibles in AllItemAdapter(private val menuItemName : ArrayList<String>, private val menuItemPrice : ArrayList<String>, private val menuItemImage : ArrayList<Int>)
+class AllItemAdapter(
+    private val context: Context,
+    private val menuList: ArrayList<AllMenu>,
+    databaseReference: DatabaseReference
+) : RecyclerView.Adapter<AllItemAdapter.AllItemViewHolder>(){
 
-    private val itemQuantities = IntArray(menuItemName.size){1}
+    private val itemQuantities = IntArray(menuList.size){1}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AllItemViewHolder {
         val binding = AllitemItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
@@ -19,16 +28,25 @@ class AllItemAdapter(private val menuItemName : ArrayList<String>, private val m
         holder.bind(position)
     }
 
-    override fun getItemCount(): Int = menuItemName.size
+    override fun getItemCount(): Int = menuList.size
 
     inner class AllItemViewHolder (private val binding : AllitemItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
             fun bind(position: Int){
                 binding.apply{
                     val quantity = itemQuantities[position]
-                    tvFoodNameAllitemItem.text = menuItemName[position]
-                    tvFoodPriceAllitemItem.text = menuItemPrice[position]
-                    imgAllitemItem.setImageResource(menuItemImage[position])
+                    //create varibales for loading data from firebase .... quantity is already there
+                    val menuItem : AllMenu = menuList[position]
+                    val uriString = menuItem.foodImage
+                    val uri = Uri.parse(uriString)
+
+
+                    tvFoodNameAllitemItem.text = menuItem.foodName
+                    tvFoodPriceAllitemItem.text = menuItem.foodPrice
+                    //we will use glide to load image
+                    Glide.with(context)
+                        .load(uri)
+                        .into(imgAllitemItem)
 
                     tvAllitemItemCount.text = quantity.toString()
 
@@ -71,12 +89,12 @@ class AllItemAdapter(private val menuItemName : ArrayList<String>, private val m
         }
 
         private fun delete(position : Int){
-            menuItemName.removeAt(position)
-            menuItemPrice.removeAt(position)
-            menuItemImage.removeAt(position)
+            menuList.removeAt(position)
+            menuList.removeAt(position)
+            menuList.removeAt(position)
             itemQuantities[position] = itemQuantities[position+1]
             notifyItemRemoved(position)
-            notifyItemRangeChanged(position, menuItemName.size)
+            notifyItemRangeChanged(position, menuList.size)
         }
 
     }
