@@ -113,10 +113,10 @@ class SigninActivity : AppCompatActivity() {
         //ekk varibale bnaenge user node k liye or ek bnaenge model using data class (jha par variable honge jisme data save karenge)
         val user = UserModel(userName,nameOfRestaurant,email,password)
         //ek user k liye unique id generate ho jaegi
-        val userId : String = FirebaseAuth.getInstance().currentUser!!.uid
+        val userId : String = FirebaseAuth.getInstance().currentUser?.uid?:""
         //node jo bnaenge vo phle child me dalenge fir userId or node data wala variable
         //save user data firebase database
-        database.child("user").child(userId).setValue(user)
+        database.child("vendor").child(userId).child("profile").setValue(user)
     }
 
     private fun showToast(message:String){

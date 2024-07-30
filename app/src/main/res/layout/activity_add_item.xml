@@ -118,7 +118,7 @@
                     android:fontFamily="@font/abhaya_libre"
                     android:padding="5dp"
                     android:textColorHint="#FF494646"
-                    android:inputType="text"/>
+                    android:inputType="number"/>
 
             </LinearLayout>
 

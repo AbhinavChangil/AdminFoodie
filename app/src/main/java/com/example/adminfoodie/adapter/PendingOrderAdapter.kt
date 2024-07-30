@@ -1,14 +1,27 @@
 package com.example.adminfoodie.adapter
 
 import android.content.Context
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.adminfoodie.databinding.ActivityPendingOrdersBinding
+import com.bumptech.glide.Glide
 import com.example.adminfoodie.databinding.PendingOrdersItemBinding
 
-class PendingOrderAdapter(private val foodImage : ArrayList<Int>, private val customerName : ArrayList<String>, private val quantity : ArrayList<String>, private val context : Context) : RecyclerView.Adapter<PendingOrderAdapter.PendingOrderViewHolder>() {
+class PendingOrderAdapter(
+    private val context: Context,
+    private val customerName: MutableList<String>,
+    private val foodImage: MutableList<String>,
+    private val quantity: MutableList<String>,
+    private val itemClicked: OnItemClicked
+) : RecyclerView.Adapter<PendingOrderAdapter.PendingOrderViewHolder>() {
+
+    interface OnItemClicked{
+        fun OnItemClickListener(position: Int)
+        fun OnItemAcceptClickListener(position: Int)
+        fun OnItemDispatchClickListener(position: Int)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PendingOrderViewHolder {
         val binding = PendingOrdersItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
@@ -29,8 +42,13 @@ class PendingOrderAdapter(private val foodImage : ArrayList<Int>, private val cu
         fun bind(position: Int) {
             binding.apply {
                 tvCustomerNamePendingOrdersItem.text = customerName[position]
-                tvQuantityNumberPendingOrdersItem.text = quantity[position]
-                imgPendingOrdersItem.setImageResource(foodImage[position])
+                tvTotalAmountPendingOrdersItem.text = quantity[position]
+//                imgPendingOrdersItem.setImageResource(foodImage[position])
+                //we will now set image with glide
+                val uri = Uri.parse(foodImage[position])
+                Glide.with(context)
+                    .load(uri)
+                    .into(imgPendingOrdersItem)
 
                 btnPendingOrdersItem.apply {
 
@@ -45,18 +63,19 @@ class PendingOrderAdapter(private val foodImage : ArrayList<Int>, private val cu
                             text = "Dispatch"
                             isAccepted = true
                             showToast("Order Accepted!")
+//                            itemClicked.OnItemAcceptClickListener(position)
                         }else{
                             customerName.removeAt(adapterPosition)
                             notifyItemRemoved(adapterPosition)
                             showToast("Order Disatched!")
+//                            itemClicked.OnItemDispatchClickListener(position)
 
                         }
-
-
-
+                    }
                 }
 
-
+                itemView.setOnClickListener {
+                    itemClicked.OnItemClickListener(position)
                 }
             }
 

@@ -47,7 +47,7 @@ class AddItemActivity : AppCompatActivity() {
 
             //get values from edit texts
             foodName = binding.edtAddItemName.text.toString().trim()
-            foodPrice = binding.edtAddItemPrice.text.toString().trim()
+            foodPrice = "₹ " + binding.edtAddItemPrice.text.toString().trim()
             foodDescription = binding.edtShortDes.text.toString().trim()
             foodIngredients = binding.edtIngredientsAddItem.text.toString().trim()
 
