@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.adminfoodie.databinding.DeliveryItemBinding
 
-class DeliveryAdapter(private val customerName : ArrayList<String>, private val deliveryStatus : ArrayList<String>) : RecyclerView.Adapter<DeliveryAdapter.DeliveryViewHolder>() {
+class DeliveryAdapter(private val customerName : MutableList<String>, private val moneyStatus : MutableList<Boolean>) : RecyclerView.Adapter<DeliveryAdapter.DeliveryViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DeliveryViewHolder {
 
@@ -26,12 +26,16 @@ class DeliveryAdapter(private val customerName : ArrayList<String>, private val 
         fun bind(position: Int) {
             binding.apply {
                 tvCustomerName.text = customerName[position]
-                tvPaymentStatus.text = deliveryStatus[position]
+                if(moneyStatus[position] == true){
+                    tvPaymentStatus.text = "Recieved"
+                }else{
+                    tvPaymentStatus.text = "Not Recieved"                }
+
                 val colorMap = mapOf(
-                    "Recieved" to Color.GREEN, "Not Recieved" to Color.RED,"Pending" to Color.parseColor("#FFEFC02E")
+                    true to Color.GREEN, false to Color.RED,"Pending" to Color.parseColor("#FFEFC02E")
                 )
-                tvPaymentStatus.setTextColor(colorMap[deliveryStatus[position]]?:Color.BLACK)
-                iconDeliveryStatus.backgroundTintList = ColorStateList.valueOf(colorMap[deliveryStatus[position]]?:Color.BLACK)
+                tvPaymentStatus.setTextColor(colorMap[moneyStatus[position]]?:Color.BLACK)
+                iconDeliveryStatus.backgroundTintList = ColorStateList.valueOf(colorMap[moneyStatus[position]]?:Color.BLACK)
             }
         }
     }

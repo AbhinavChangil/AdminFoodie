@@ -2,6 +2,7 @@ package com.example.adminfoodie
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -48,7 +49,7 @@ class AllItemActivity : AppCompatActivity() {
         val foodRef: DatabaseReference = database.reference.child("menu")
 
         //fetch data from database
-        foodRef.addListenerForSingleValueEvent(object : ValueEventListener {
+        foodRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 //clear existing data before populating
                 menuItems.clear()
@@ -71,10 +72,35 @@ class AllItemActivity : AppCompatActivity() {
     }
 
     private fun setAdapter(){
-        val adapter = AllItemAdapter(this,menuItems,databaseReference)
+        val adapter = AllItemAdapter(this,menuItems,databaseReference){
+            position ->
+            deleteMenuItem(position)
+        }
         binding.rvAllitem.layoutManager = LinearLayoutManager(this)
         binding.rvAllitem.adapter = adapter
 
 
+    }
+
+    private fun deleteMenuItem(position: Int) {
+        val menuItemToDelete = menuItems[position]
+        val menuItemKey = menuItemToDelete.key
+        val foodMenuReference = database.reference.child("menu").child(menuItemKey!!)
+        foodMenuReference.removeValue()
+            .addOnCompleteListener {
+                task->
+                if(task.isSuccessful){
+                    menuItems.removeAt(position)
+                    binding.rvAllitem.adapter?.notifyItemRemoved(position)
+                    showToast("Item Deleted Successfully!")
+                }else{
+                    showToast("Item Not Deleted!")
+                }
+            }
+    }
+
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }

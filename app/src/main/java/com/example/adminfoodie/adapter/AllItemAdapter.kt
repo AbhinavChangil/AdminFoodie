@@ -14,7 +14,8 @@ import com.google.firebase.database.DatabaseReference
 class AllItemAdapter(
     private val context: Context,
     private val menuList: ArrayList<AllMenu>,
-    databaseReference: DatabaseReference
+    databaseReference: DatabaseReference,
+    private val onDeleteClickedListener: (position: Int) -> Unit
 ) : RecyclerView.Adapter<AllItemAdapter.AllItemViewHolder>(){
 
     private val itemQuantities = IntArray(menuList.size){1}
@@ -60,11 +61,12 @@ class AllItemAdapter(
                     }
 
                     btnDeleteAllitemItem.setOnClickListener {
-                        val itemPosition = adapterPosition
-                        // phle check krega recycler view me iski position hai ya nahi
-                        if(itemPosition != RecyclerView.NO_POSITION) {
-                            delete(itemPosition)
-                        }
+//                        val itemPosition = adapterPosition
+//                        // phle check krega recycler view me iski position hai ya nahi
+//                        if(itemPosition != RecyclerView.NO_POSITION) {
+//                            delete(itemPosition)
+//                        }
+                        onDeleteClickedListener(position)
                     }
 
 
