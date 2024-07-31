@@ -35,11 +35,6 @@ class OutForDeliveryActivity : AppCompatActivity() {
         //retrieve and display completed orders
         retrieveCompletedOrdersDetails()
 
-//        //dummy data
-//        val customerName = arrayListOf("Abhinav Changil", "Vipin Goyat", "Shubham Jangra", "Mayank Ahuja", "Mohammad Ali", "Aryan Bansal", "Rahul")
-//        val paymentStatus = arrayListOf("Recieved","Not Recieved", "Recieved","Pending", "Not Recieved", "Recieved", "Pending")
-//
-//        //adapter
 
 
     }
